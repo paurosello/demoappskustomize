@@ -1,0 +1,39 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+metadata:
+  name: arbitrary
+
+resources:
+- kubernetes-manifests.yaml
+- pdbs.yaml
+- psp.yaml
+- ingress.yaml
+
+patchesStrategicMerge:
+- redis.yaml
+
+replicas:
+- name: emailservice
+  count: 5
+- name: adservice
+  count: 5
+- name: checkoutservice
+  count: 5
+- name: currencyservice
+  count: 5
+- name: frontend
+  count: 5
+- name: paymentservice
+  count: 5
+- name: productcatalogservice
+  count: 5
+- name: recommendationservice
+  count: 5
+- name: shippingservice
+  count: 5
+- name: cartservice
+  count: 5
+- name: loadgenerator
+  count: 5
+- name: redis-cart
+  count: 5
