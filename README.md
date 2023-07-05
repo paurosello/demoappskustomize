@@ -5,12 +5,15 @@ https://github.com/GoogleCloudPlatform/microservices-demo/blob/main/release/kube
 https://github.com/didier-durand/microservices-on-cloud-kubernetes
 
 ## Install Remote
+```
 kubectl create ns store
 kustomize build github.com/paurosello/demoappskustomize//kustomize-store | kubectl apply -n store -f -
-
+```
 ## Install Local
+```
 kubectl create ns store
 kustomize build kustomize-gapps/ | kubectl apply -n store -f -
+```
 
 ## Check Load
 
